@@ -17,7 +17,22 @@ def retrieve_urls(url, extra_pages=0):
         # either found . or its 0
 
         if i >1:
+            after = url[i:]
             # found the thing before the dot 
             extracted_end = url[:i]
-        else:
+            a = len(extracted_end)-1
+            digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+            while extracted_end[a] in digits:
+                a -=1
+            pattern =  int(extracted_end[(a+1):])
+            before = extracted_end[:(a+1)]
+            num = 0
+            pattern +=1 
+            # pattern +1 as url_list already has the default one 
+            # make all the urls with the pattern
+            while num < extra_pages:
+                url_list.append(before+str(pattern)+after)
+                num +=1
+                pattern +=1
+        return url_list
             #differne pattern
