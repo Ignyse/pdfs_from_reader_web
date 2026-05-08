@@ -1,4 +1,5 @@
 def retrieve_urls(url, extra_pages=0):
+    # Objective: Returns a list of urls, given one initial and finds a pattern to obtain the next ones (with a set extra pages)
     # example https://webpage/0001.html
     # backtrack from the end
     # first is possibile of .pdf .html .sth

@@ -20,7 +20,7 @@ def plaintext_to_html(text: str) -> str:
                 paragraph = []
             continue
 
-        if stripped.equals('...'):
+        if stripped == '...':
             if paragraph:
                 joined = " ".join(paragraph)
                 html_parts.append(f"<p>{escape(joined)}</p>")
